@@ -1,11 +1,15 @@
-# Clone project repository
+**Clone project repository**
+```
 cd && rm -rf node
 git clone https://github.com/AssetMantle/node.git
 cd node
 git checkout v1.0.0
+```
 
-# Build binary
+**Build binary**
+```
 make install
+```
 
 # Set node CLI configuration
 mantleNode config chain-id mantle-1
