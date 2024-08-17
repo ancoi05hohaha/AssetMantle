@@ -11,14 +11,17 @@ git checkout v1.0.0
 make install
 ```
 
-# Set node CLI configuration
+**Set node CLI configuration**
+```
 mantleNode config chain-id mantle-1
 mantleNode config keyring-backend file
 mantleNode config node tcp://localhost:14657
+```
 
-# Initialize the node
+**Initialize the node**
+```
 mantleNode init "Your Node Name" --chain-id mantle-1
-
+```
 # Download genesis and addrbook files
 curl -L https://snapshots.nodejumper.io/assetmantle/genesis.json > $HOME/.mantleNode/config/genesis.json
 curl -L https://snapshots.nodejumper.io/assetmantle/addrbook.json > $HOME/.mantleNode/config/addrbook.json
