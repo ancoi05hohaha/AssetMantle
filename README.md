@@ -38,16 +38,20 @@ sed -i -e 's|^seeds *=.*|seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds
 sed -i -e 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.01umntl"|' $HOME/.mantleNode/config/app.toml
 ```
 
-# Set pruning
+**Set pruning**
+```
 sed -i \
   -e 's|^pruning *=.*|pruning = "custom"|' \
   -e 's|^pruning-keep-recent *=.*|pruning-keep-recent = "100"|' \
   -e 's|^pruning-interval *=.*|pruning-interval = "17"|' \
   $HOME/.mantleNode/config/app.toml
+```
 
-# Change ports
+**Change ports**
+```
 sed -i -e "s%:1317%:14617%; s%:8080%:14680%; s%:9090%:14690%; s%:9091%:14691%; s%:8545%:14645%; s%:8546%:14646%; s%:6065%:14665%" $HOME/.mantleNode/config/app.toml
 sed -i -e "s%:26658%:14658%; s%:26657%:14657%; s%:6060%:14660%; s%:26656%:14656%; s%:26660%:14661%" $HOME/.mantleNode/config/config.toml
+```
 
 # Download latest chain data snapshot
 curl "https://snapshots.nodejumper.io/assetmantle/assetmantle_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.mantleNode"
