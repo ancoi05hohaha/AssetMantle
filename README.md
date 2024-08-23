@@ -53,8 +53,10 @@ sed -i -e "s%:1317%:14617%; s%:8080%:14680%; s%:9090%:14690%; s%:9091%:14691%; s
 sed -i -e "s%:26658%:14658%; s%:26657%:14657%; s%:6060%:14660%; s%:26656%:14656%; s%:26660%:14661%" $HOME/.mantleNode/config/config.toml
 ```
 
-# Download latest chain data snapshot
+**Download latest chain data snapshot**
+```
 curl "https://snapshots.nodejumper.io/assetmantle/assetmantle_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.mantleNode"
+```
 
 # Create a service
 sudo tee /etc/systemd/system/mantleNode.service > /dev/null << EOF
