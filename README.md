@@ -58,7 +58,8 @@ sed -i -e "s%:26658%:14658%; s%:26657%:14657%; s%:6060%:14660%; s%:26656%:14656%
 curl "https://snapshots.nodejumper.io/assetmantle/assetmantle_latest.tar.lz4" | lz4 -dc - | tar -xf - -C "$HOME/.mantleNode"
 ```
 
-# Create a service
+**Create a service**
+```
 sudo tee /etc/systemd/system/mantleNode.service > /dev/null << EOF
 [Unit]
 Description=AssetMantle node service
@@ -72,8 +73,11 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
+```
 sudo systemctl daemon-reload
 sudo systemctl enable mantleNode.service
+```
 
 # Start the service and check the logs
 sudo systemctl start mantleNode.service
