@@ -79,6 +79,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable mantleNode.service
 ```
 
-# Start the service and check the logs
+**Start the service and check the logs**
+```
 sudo systemctl start mantleNode.service
 sudo journalctl -u mantleNode.service -f --no-hostname -o cat
+```
